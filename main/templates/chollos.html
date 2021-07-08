@@ -1,0 +1,48 @@
+{% extends 'master.html' %}
+
+{% block contenido %}
+
+{% for chollo in chollos %}
+
+    <div class="row">
+      <div class="col-sm-9 col-md-10 col-lg-10 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="pt-4">{{chollo.title}}</h5>
+            <hr>
+            <div class="row">
+              <img src="{{chollo.image}}" alt="Chollo image" style="margin-left:40px" height="200px" width="200px">
+              <div class="col-sm-10 col-md-10 col-lg-8 mx-auto">
+                <p>{{chollo.description}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row pt-4">
+              <div class="col-sm-6 col-md-3 col-lg-3 text-center">
+                <h6>Precio: </h6><strong><h5>{{chollo.price}} €</h5></strong>
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3 text-center">
+                <h6>Categoría: </h6>{{chollo.category}}
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3 text-center">
+                <h6>Vendedor: </h6>{{chollo.seller}}
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3 text-center">
+                <a class="btn btn-danger" href="{{chollo.source_link}}" role="button">Ir al chollo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endfor %}
+
+{%if alert%}
+  <div class="alert alert-dismissible alert-warning mt-4">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4 class="alert-heading">Vaya, parece que algo ha ido mal:</h4>
+  <p class="mb-0">Aún no se han proporcionado datos al sistema.</p>
+  </div>
+{% endif %}
+{% endblock %}

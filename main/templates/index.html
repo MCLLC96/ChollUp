@@ -1,0 +1,23 @@
+{% extends 'master.html' %}
+
+{% block contenido %}
+
+  <div class="jumbotron" style="background:tranparent !important">
+    <h1 class="display-3">¡Bienvenidos a Choll Up!</h1>
+    <p class="lead">La web para disfrutar de los mejores chollos del momento</p>
+    <hr class="my-4">
+    <p>Pulse el siguiente botón para cargar los datos. Este proceso puede tardar unos minutos.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-md" href="/populate" role="button">Cargar datos</a>
+    </p>
+
+    {%if alert%}
+      <div class="alert alert-dismissible alert-warning mt-4">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <h4 class="alert-heading">Vaya, parece que algo ha ido mal:</h4>
+      <p class="mb-0">No tiene permisos para poblar la base de datos.</p>
+      </div>
+    {% endif %}
+  </div>
+
+{% endblock %}
