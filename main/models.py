@@ -28,11 +28,4 @@ class Chollo(models.Model):
     def __str__(self):
         return self.title
     
-
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key= True, verbose_name= 'Usuario')
-    favourite_categories = models.ManyToManyField(Category, verbose_name= 'Categorias favoritas')
-
-    def __str__(self):
-        return self.user.username
     

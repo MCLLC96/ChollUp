@@ -1,7 +1,6 @@
 {% extends 'master.html' %}
 {% block contenido %}
 
-{% if populate %}
   <div class="row">
     <div class="col-sm-6 col-md-6 col-lg-6 mx-auto">
       <div class="card card-signin my-5">
@@ -25,13 +24,7 @@
       </div>
     </div>
   </div>
-{% else %}
-    <div class="alert alert-dismissible alert-warning mt-4">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <h4 class="alert-heading">Vaya, parece que algo ha ido mal:</h4>
-        <p class="mb-0">Aún no se han proporcionado datos al sistema.</p>
-    </div>
-{% endif %}
+
 {% if chollos %}
     {% for chollo in chollos %}
         <div class="row">
