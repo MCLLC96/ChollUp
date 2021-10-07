@@ -68,3 +68,8 @@ def filterByPrice(request):
     return render(request, 'searchByPrice.html', {'chollos': chollos,'form_price': form_price, 'populate': isPopulated()})
 
 
+def terms(request):
+    return render(request,'terms.html')
+
+def policy(request):
+    return render(request,'policy.html')

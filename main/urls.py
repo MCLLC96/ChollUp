@@ -6,6 +6,8 @@ urlpatterns = [
     path('filter-category', views.filterByCategory),
     path('filter-price', views.filterByPrice),
     path('group-by-seller', views.chollosGroupBySource),
+    path('terms', views.terms),
+    path('policy', views.policy),
 
     
 
